@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 import { uniqueDate } from "../services/date.js";
 import checkComplete from "./checkComplete.js";
 import deleteIcon from "./deleteIcon.js";
 import { displayTasks } from "./readTask.js";
-=======
 import checkComplete from "./checkComplete.js";
 import deleteIcon from "./deleteIcon.js";
 
->>>>>>> ef5839d93ee8f91cc98f3d8e35a36fc55846cfa7
 
 export const addTask = (evento) =>{
     evento.preventDefault();
@@ -18,20 +15,14 @@ export const addTask = (evento) =>{
 
     const value = input.value;
     const date = calendar.value;
-<<<<<<< HEAD
     const dateFormat = moment(date).format('DD/MM/YYYY HH:mm:ss');
-=======
-    const dateFormat = moment(date).format('DD/MM/YYYY');
->>>>>>> ef5839d93ee8f91cc98f3d8e35a36fc55846cfa7
-    
+
     if(value == "" || date == ""){
         return;
     }
 
-
     calendar.value = "";
     input.value = "";
-<<<<<<< HEAD
 
     const complete = false;
 
@@ -41,19 +32,13 @@ export const addTask = (evento) =>{
         complete,
         id: uuid.v4(),
     };
+    
     list.innerHTML ='';
-=======
-    const taskObj = {
-        value,
-        dateFormat,
-    };
->>>>>>> ef5839d93ee8f91cc98f3d8e35a36fc55846cfa7
 
     const taskList = JSON.parse(localStorage.getItem('tasks')) || [];
     taskList.push(taskObj);
     localStorage.setItem('tasks',JSON.stringify(taskList));
 
-<<<<<<< HEAD
     displayTasks();
 }
 
