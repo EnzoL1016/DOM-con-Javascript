@@ -46,7 +46,11 @@ form {
   padding: 10px;
   border: 1px solid #eee;
   outline: none;
+<<<<<<< HEAD
   width: 40%;
+=======
+  width: 35%;
+>>>>>>> ef5839d93ee8f91cc98f3d8e35a36fc55846cfa7
 }
 
 .inputForm::placeholder {
@@ -132,11 +136,14 @@ form {
   list-style: none;
   align-items: center;
 }
+<<<<<<< HEAD
 .dateInput{
   width: 40%;
   padding: 8px;
   margin: 0;
 }
+=======
+>>>>>>> ef5839d93ee8f91cc98f3d8e35a36fc55846cfa7
 
 @media screen and (max-width: 764px) {
   .mainCard {
