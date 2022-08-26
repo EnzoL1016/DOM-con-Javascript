@@ -23,7 +23,8 @@
         <div class="title"><img src="./assets/rocket.svg" /></div>
         <div>
           <form action="">
-            <input
+            <div class="divInputs">
+              <input
               type="text"
               name="task"
               placeholder="Nombre de la tarea"
@@ -31,6 +32,9 @@
               autocomplete="off"
               data-form-input
             />
+            <input placeholder="DD/MM/YYYY" type="text" data-form-date class="dateInput" onfocus="(this.type='datetime-local')">
+          </div>
+            
             <button type="submit" class="btnCreate" data-form-btn>
               Agregar <i class="fas fa-plus-circle"></i>
             </button>
@@ -40,6 +44,8 @@
         </ul>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type='module' src="scripts.js"></script>
   </body>
 </html>
