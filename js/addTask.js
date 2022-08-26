@@ -2,9 +2,6 @@ import { uniqueDate } from "../services/date.js";
 import checkComplete from "./checkComplete.js";
 import deleteIcon from "./deleteIcon.js";
 import { displayTasks } from "./readTask.js";
-import checkComplete from "./checkComplete.js";
-import deleteIcon from "./deleteIcon.js";
-
 
 export const addTask = (evento) =>{
     evento.preventDefault();
@@ -16,10 +13,11 @@ export const addTask = (evento) =>{
     const value = input.value;
     const date = calendar.value;
     const dateFormat = moment(date).format('DD/MM/YYYY HH:mm:ss');
-
+    
     if(value == "" || date == ""){
         return;
     }
+
 
     calendar.value = "";
     input.value = "";
@@ -32,7 +30,6 @@ export const addTask = (evento) =>{
         complete,
         id: uuid.v4(),
     };
-    
     list.innerHTML ='';
 
     const taskList = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -54,23 +51,11 @@ export const createTask = ({value,dateFormat, complete,id}) => {
             check.classList.toggle('far');
         }
 
-=======
-    const task = createTask(taskObj);
-    list.appendChild(task);
-}
-
-
-export const createTask = ({value,dateFormat}) => {  
-    const task = document.createElement('li');
-        task.classList.add('card');
-
->>>>>>> ef5839d93ee8f91cc98f3d8e35a36fc55846cfa7
     const titleTask = document.createElement('span');
         titleTask.classList.add('task');
         titleTask.innerText = value;
 
     const taskContent = document.createElement('div');
-<<<<<<< HEAD
         taskContent.appendChild(check);
         taskContent.appendChild(titleTask);
 
@@ -79,15 +64,5 @@ export const createTask = ({value,dateFormat}) => {
         task.appendChild(taskContent);
         task.appendChild(dateElement);
         task.appendChild(deleteIcon(id));
-=======
-        taskContent.appendChild(checkComplete());
-        taskContent.appendChild(titleTask);
-
-    const dateElement = document.createElement('span');
-        dateElement.innerHTML = dateFormat;
-        task.appendChild(taskContent);
-        task.appendChild(dateElement);
-        task.appendChild(deleteIcon());
->>>>>>> ef5839d93ee8f91cc98f3d8e35a36fc55846cfa7
     return task;
 };
